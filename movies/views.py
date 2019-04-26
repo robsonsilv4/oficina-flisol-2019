@@ -8,7 +8,7 @@ from movies.models import Movie
 class MovieCreateView(CreateView):
     model = Movie
     fields = '__all__'
-    success_url = 'movie-list'
+    success_url = reverse_lazy('movie-list')
     # template_name_suffix = '_form'
 
 
@@ -27,12 +27,12 @@ class MovieDetailView(DetailView):
 class MovieUpdateView(UpdateView):
     model = Movie
     fields = '__all__'
-    success_url = 'movie-list'
+    success_url = reverse_lazy('movie-list')
     # template_name_suffix = '_form'
 
 
 class MovieDeleteView(DeleteView):
     passmodel = Movie
     fields = '__all__'
-    success_url = 'movie-list'
+    success_url = reverse_lazy('movie-list')
     # template_name_suffix = '_confirm_delete'
