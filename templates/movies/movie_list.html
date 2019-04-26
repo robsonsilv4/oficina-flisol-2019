@@ -3,6 +3,7 @@
 {% block content %}
     {% for object in object_list %}
         <div>
+            <a href="{% url 'movies:detail' object.id %}">{{ object.id }}</a>
             <p>{{ object.title }}</p>
             <p>{{ object.description }}</p>
             <p>{{ object.watched }}</p>
