@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Adicionar</button>
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <a href="{% url 'movies:list' %}" class="btn btn-danger">Cancelar</a>
     </form>
 {% endblock %}

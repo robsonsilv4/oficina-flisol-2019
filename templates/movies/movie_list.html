@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for object in object_list %}
-        <div>
-            <a href="{% url 'movies:detail' object.id %}">{{ object.id }}</a>
-            <p>{{ object.title }}</p>
-            <p>{{ object.description }}</p>
-            <p>{{ object.watched }}</p>
-        </div>
-    {% endfor %}
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th scope="col">Título</th>
+                <th scope="col">Assistido?</th>
+                <th scope="col">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+            <tr>
+                <td>{{ object.title }}</td>
+                <td>{{ object.watched }}</td>
+                <td>
+                    <a href="{% url 'movies:detail' object.id %}" class="btn btn-sm btn-primary">Detalhes</a>
+                    <a href="{% url 'movies:update' object.id %}" class="btn btn-sm btn-warning">Atualizar</a>
+                    <a href="{% url 'movies:delete' object.id %}" class="btn btn-sm btn-danger">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
