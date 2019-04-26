@@ -2,10 +2,14 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-primary">Adicionar</button>
-        <a href="{% url 'movies:list' %}" class="btn btn-danger">Cancelar</a>
-    </form>
+    <div class="card mt-3">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+                <a href="{% url 'movies:list' %}" class="btn btn-danger">Cancelar</a>
+            </form>
+        </div>
+    </div>
 {% endblock %}

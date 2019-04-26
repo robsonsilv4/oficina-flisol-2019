@@ -48,7 +48,11 @@
     </header>
 
     <div class="container-fluid">
-      {% block content %}{% endblock %}
+      <div class="row justify-content-center">
+        <div class="col-8">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
