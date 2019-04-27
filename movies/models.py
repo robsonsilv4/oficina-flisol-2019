@@ -1,13 +1,15 @@
 from django.db import models
+from django.core.validators import MaxValueValidator
 
 
 class Movie(models.Model):
     title = models.CharField('Título', max_length=255)
     description = models.TextField('Descrição', blank=True)
-    rate = models.IntegerField('Avaliação', default=0)
+    rate = models.IntegerField(
+        'Avaliação', default=0, validators=[MaxValueValidator(5)])
 
     class Meta():
-        ordering = ['title']
+        ordering = ['-rate']
         verbose_name = 'Filme'
         verbose_name_plural = 'Filmes'
 

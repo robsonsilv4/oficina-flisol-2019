@@ -6,7 +6,7 @@
             <tr>
                 <th scope="col">Título</th>
                 <th scope="col">Avaliação</th>
-                <th scope="col">Opções (CRUD)</th>
+                <th scope="col">Opções</th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +16,6 @@
                 <td>{{ object.rate }}</td>
                 <td>
                     <div class="container-fluid">
-                        <a href="{% url 'movies:create' %}" class="btn btn-sm mt-1 btn-success">Adicionar</a>
                         <a href="{% url 'movies:detail' object.id %}" class="btn mt-1 btn-sm btn-primary">Detalhes</a>
                         <a href="{% url 'movies:update' object.id %}" class="btn mt-1 btn-sm btn-warning">Atualizar</a>
                         <a href="{% url 'movies:delete' object.id %}" class="btn mt-1 btn-sm btn-danger">Deletar</a>
