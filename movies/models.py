@@ -4,7 +4,7 @@ from django.db import models
 class Movie(models.Model):
     title = models.CharField('Título', max_length=255)
     description = models.TextField('Descrição', blank=True)
-    watched = models.BooleanField('Assistido?', default=False)
+    rate = models.IntegerField('Avaliação', default=0)
 
     class Meta():
         ordering = ['title']
